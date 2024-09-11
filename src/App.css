@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Gunterz-Black";
+  src: url("../src/assets/fonts/Gunterz-Black.otf");
+}
+@font-face {
+  font-family: "Cinema-sunday";
+  src: url("../src/assets/fonts/cinema-sunday.otf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Quity";
+  src: url("../src/assets/fonts/Quity.ttf");
+}
+.container {
+  height: 100vh;
+  background-color: #253237;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  background-color: #210002;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.animation,
+.animation_layer {
+  height: 100vh;
+}
+
+.animation_layer {
+  width: 100%;
+  background-size: cover;
+}
+
+#bg {
+  background-color: #210002;
+}
+#hero_bg {
+  background-image: url(/src/assets/images/hero_bg.jpg);
+  background-size: cover;
+  background-position: left;
+}
+
+#hero_title {
   color: white;
+  font-family: "Cinema-sunday";
+  text-align: center;
+  font-size: 5em;
+  z-index: 1;
+  position: relative;
+}
+#hero_subtitle {
+  color: rgb(236, 228, 236);
+  font-family: "Quity";
+  text-align: center;
+  font-size: 3em;
+}
+#hero_select_text {
+  color: rgb(236, 228, 236);
+  font-family: "Quity";
+  text-align: right;
+  margin-right: 30%;
+  font-size: 1.2em;
+}
+#portfolio_title {
+  color: rgb(221, 105, 173);
+  font-family: "Gunterz-Black";
+  text-align: center;
+  font-size: 3em;
+  z-index: 1;
+  position: relative;
+  /* Text shadow to simulate an inner shadow effect */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
+    /* Right bottom shadow */ -1px -1px 2px rgba(255, 255, 255, 0.3); /* Left top highlight for inner effect */
+}
+#github_title {
+  color: rgb(255, 255, 255);
+  font-family: "Cinema-sunday";
+  text-align: center;
+  font-size: 3em;
+  z-index: 1;
+  position: relative;
+}
+#element02 {
+  background-image: url(/src/assets/images/element02.png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: right;
+  right: 2%;
 }
 
-.App-link {
-  color: #61dafb;
+#element03 {
+  background-image: url(/src/assets/images/element03.png);
+  background-size: 20%;
+  background-repeat: no-repeat;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#element04 {
+  background-image: url(/src/assets/images/element04.png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#element05 {
+  background-image: url(/src/assets/images/element05.png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  margin-left: 70%;
+}
+
+#accent_color {
+  color: rgb(221, 105, 173);
+}
+
+.deadspace {
+  height: 200px;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-20px);
   }
 }

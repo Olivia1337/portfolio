@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 3rem;
+  padding-top: 2rem;
+
+  gap: 20px;
+}
+
+.header p {
+  font-family: "Cinema-sunday";
+  font-size: 2em;
+  color: white;
+  margin: 0;
+}

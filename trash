@@ -1,0 +1,134 @@
+import "./App.css";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import About from "./pages/About";
+function App() {
+  return (
+    <div className="app">
+      <Parallax pages={2} style={{ top: "0", left: "0" }} className="animation">
+        <ParallaxLayer offset={0} speed={0.25}>
+          <div className="animation_layer " id="bg"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.3}>
+          <div className="animation_layer " id="mountain"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.4} speed={1}>
+          <h1 id="hero_title">Olivia Eriksson</h1>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.3}>
+          <div className="animation_layer " id="jungle1"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.35}>
+          <div className="animation_layer " id="jungle2"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.5}>
+          <div className="animation_layer " id="jungle3"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.45}>
+          <div className="animation_layer " id="jungle4"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.4}>
+          <div className="animation_layer " id="manonmountain"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.2}>
+          <div className="animation_layer " id="jungle5"></div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={0.25}>
+          <About />
+        </ParallaxLayer>
+      </Parallax>
+    </div>
+  );
+}
+
+export default App;
+
+
+.app {
+  background-color: #210002;
+  height: 100vh;
+}
+
+.animation,
+.animation_layer {
+  height: 100vh;
+}
+
+.animation_layer {
+  background-position: top center;
+  width: 100%;
+  background-size: cover;
+}
+
+#textblock {
+  background-color: #210002;
+  height: 100vh;
+}
+
+#textblock-container {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+#textblock-title {
+  color: #ffaf1b;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#textblock-content {
+  color: #ffaf1b;
+  font-size: 1em;
+}
+
+#textblock-footer {
+  color: #ffaf1b;
+  font-size: 15px;
+  font-weight: 400;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#textblock-devsense {
+  text-decoration: none;
+  color: #ffaf1b;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#bg {
+  background-color: bisque;
+}
+#mountain {
+  background-image: url(/src/assets/images/mountains.png);
+}
+
+#jungle1 {
+  background-image: url(/src/assets/images/jungle1.png);
+}
+#jungle2 {
+  background-image: url(/src/assets/images/jungle2.png);
+}
+#jungle3 {
+  background-image: url(/src/assets/images/jungle3.png);
+}
+#jungle4 {
+  background-image: url(/src/assets/images/jungle4.png);
+}
+#jungle5 {
+  background-image: url(/src/assets/images/jungle5.png);
+}
+#manonmountain {
+  background-image: url(/src/assets/images/man_on_mountain.png);
+}
+
+#hero_title {
+  color: #210002;
+  text-align: center;
+}

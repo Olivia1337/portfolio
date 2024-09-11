@@ -1,0 +1,56 @@
+.contact_container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact_content {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 30%;
+}
+
+.contact_content h1 {
+  color: rgb(255, 255, 255); /* Example: Change text color */
+  font-size: 3em; /* Example: Change font size */
+  font-family: Gunterz-Black;
+}
+.contact_content p {
+  color: white; /* Example: Change text color */
+  font-size: 2em; /* Example: Change font size */
+  font-family: Cinema-sunday;
+}
+
+.formText {
+  font-size: 1.2em;
+  text-align: left;
+  margin-bottom: 0.2rem;
+}
+
+.form_part_section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.form_input {
+  height: 3rem;
+  border-radius: 10px;
+}
+.form_input_message {
+  height: 20rem;
+  border-radius: 10px;
+}
+
+.form_button {
+  font-size: 1.5em;
+  height: 3rem;
+  width: 12rem;
+  border-radius: 10px;
+  font-family: Gunterz-Black;
+  color: rgb(221, 105, 173);
+}
+
+.form_button:hover {
+  background-color: rgb(221, 105, 173);
+  color: white; /* Darker background on hover */
+}
