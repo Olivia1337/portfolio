@@ -1,127 +1,93 @@
 @font-face {
-  font-family: "Gunterz-Black";
-  src: url("../src/assets/fonts/Gunterz-Black.otf");
-}
-@font-face {
-  font-family: "Cinema-sunday";
-  src: url("../src/assets/fonts/cinema-sunday.otf");
-}
-
-@font-face {
   font-family: "Quity";
   src: url("../src/assets/fonts/Quity.ttf");
 }
-.container {
-  height: 100vh;
-  background-color: #253237;
+
+@font-face {
+  font-family: "Jedira-Italic";
+  src: url("../src/assets/fonts/Jedira-Italic.otf");
+}
+@font-face {
+  font-family: "Jedira-Regular";
+  src: url("../src/assets/fonts/Jedira-Regular.otf");
 }
 
-.app {
-  background-color: #210002;
-  height: 100vh;
+/* Fade effect */
+.fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.animation,
-.animation_layer {
-  height: 100vh;
+.fade.in {
+  opacity: 1;
 }
 
-.animation_layer {
+.fade.out {
+  opacity: 0;
+}
+
+/* Wheel Picker Styles */
+.wheel-picker-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Hide scrollbar */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.wheel-picker-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.wheel-picker-content {
+  position: relative;
   width: 100%;
-  background-size: cover;
+  height: 100%;
 }
 
-#bg {
-  background-color: #210002;
+.wheel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s ease, opacity 0.3s ease;
 }
-#hero_bg {
-  background-image: url(/src/assets/images/hero_bg.jpg);
-  background-size: cover;
-  background-position: left;
-}
-
-#hero_title {
-  color: white;
-  font-family: "Cinema-sunday";
-  text-align: center;
-  font-size: 5em;
-  z-index: 1;
-  position: relative;
-}
-#hero_subtitle {
-  color: rgb(236, 228, 236);
-  font-family: "Quity";
-  text-align: center;
-  font-size: 3em;
-}
-#hero_select_text {
-  color: rgb(236, 228, 236);
-  font-family: "Quity";
-  text-align: right;
-  margin-right: 30%;
-  font-size: 1.2em;
-}
-#portfolio_title {
-  color: rgb(221, 105, 173);
-  font-family: "Gunterz-Black";
-  text-align: center;
-  font-size: 3em;
-  z-index: 1;
-  position: relative;
-  /* Text shadow to simulate an inner shadow effect */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
-    /* Right bottom shadow */ -1px -1px 2px rgba(255, 255, 255, 0.3); /* Left top highlight for inner effect */
-}
-#github_title {
-  color: rgb(255, 255, 255);
-  font-family: "Cinema-sunday";
-  text-align: center;
-  font-size: 3em;
-  z-index: 1;
-  position: relative;
-}
-#element02 {
-  background-image: url(/src/assets/images/element02.png);
-  background-size: 30%;
-  background-repeat: no-repeat;
+.scroll-indicator-container {
   position: absolute;
-  background-position: right;
-  right: 2%;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-#element03 {
-  background-image: url(/src/assets/images/element03.png);
-  background-size: 20%;
-  background-repeat: no-repeat;
+.scroll-indicator-item {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 
-#element04 {
-  background-image: url(/src/assets/images/element04.png);
-  background-size: 30%;
-  background-repeat: no-repeat;
-  background-position: center;
+.scroll-indicator-item.active {
+  opacity: 1;
+  background-color: #1c1917; /* Color for the active indicator */
 }
-
-#element05 {
-  background-image: url(/src/assets/images/element05.png);
-  background-size: 30%;
-  background-repeat: no-repeat;
-  margin-left: 70%;
-}
-
-#accent_color {
-  color: rgb(221, 105, 173);
-}
-
-.deadspace {
-  height: 200px;
-}
-@keyframes bounce {
-  0%,
-  100% {
+@keyframes float {
+  0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-10px); /* Adjust the distance of the float */
+  }
+  100% {
+    transform: translateY(0);
   }
 }
