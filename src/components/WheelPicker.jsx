@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
+import e1 from "../assets/images/element07.png";
+import e2 from "../assets/images/element08.png";
 
 function WheelPicker({ items, spacing = 20, colors }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [backgroundColor, setBackgroundColor] = useState(colors[0]); // Set the initial background color
+  const [scrollTop, setScrollTop] = useState(0); // Track the scroll position
   const containerRef = useRef(null);
   const itemRefs = useRef([]);
 
@@ -17,10 +20,12 @@ function WheelPicker({ items, spacing = 20, colors }) {
         selectedIndex * (itemHeight + spacing) -
         (containerHeight / 2 - itemHeight / 2);
 
-      // Scroll to the target position
-      container.scrollTo({
-        top: targetScrollTop,
-        behavior: "smooth",
+      // Smoothly scroll to the target position
+      requestAnimationFrame(() => {
+        container.scrollTo({
+          top: targetScrollTop,
+          behavior: "smooth",
+        });
       });
     }
 
@@ -39,9 +44,11 @@ function WheelPicker({ items, spacing = 20, colors }) {
       const initialScrollTop =
         0 * (itemHeight + spacing) - (containerHeight / 2 - itemHeight / 2);
 
-      container.scrollTo({
-        top: initialScrollTop,
-        behavior: "smooth",
+      requestAnimationFrame(() => {
+        container.scrollTo({
+          top: initialScrollTop,
+          behavior: "smooth",
+        });
       });
     }
   }, [items.length, spacing]);
@@ -56,6 +63,18 @@ function WheelPicker({ items, spacing = 20, colors }) {
         return newIndex;
       });
     }
+  };
+
+  const handleScroll = () => {
+    // Update scrollTop state based on container scroll
+    const container = containerRef.current;
+    if (container) {
+      setScrollTop(container.scrollTop);
+    }
+  };
+
+  const handleDotClick = (index) => {
+    setSelectedIndex(index);
   };
 
   const renderItems = () => {
@@ -96,6 +115,7 @@ function WheelPicker({ items, spacing = 20, colors }) {
             style={{
               opacity: index === selectedIndex ? 1 : 0.5,
             }}
+            onClick={() => handleDotClick(index)} // Add click handler
           />
         ))}
       </div>
@@ -110,9 +130,24 @@ function WheelPicker({ items, spacing = 20, colors }) {
         transition: "background-color 0.5s ease", // Smooth transition for background color
       }}
     >
+      <img
+        src={e1}
+        className="z-30 absolute w-[30rem] object-contain top-[90%] left-[2%]"
+        style={{ transform: `translateY(${scrollTop * -0.2}px)` }}
+      />{" "}
+      <img
+        src={e2}
+        className="z-30 absolute w-[30rem] object-contain mix-blend-difference"
+        style={{
+          transform: `translateY(${scrollTop * -0.2}px)`,
+          right: "-12rem",
+          top: "0rem",
+        }}
+      />
       <div
         ref={containerRef}
         onWheel={handleWheel}
+        onScroll={handleScroll} // Capture scroll events
         className="wheel-picker-container"
       >
         <div className="wheel-picker-content">{renderItems()}</div>

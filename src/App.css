@@ -70,7 +70,7 @@
 .scroll-indicator-item {
   width: 30px;
   height: 30px;
-  background-color: white;
+  background-color: rgb(126, 25, 25);
   border-radius: 50%;
   opacity: 0.5;
   transition: opacity 0.3s ease;
@@ -78,7 +78,7 @@
 
 .scroll-indicator-item.active {
   opacity: 1;
-  background-color: #1c1917; /* Color for the active indicator */
+  background-color: #991b1b; /* Color for the active indicator */
 }
 @keyframes float {
   0% {
@@ -90,4 +90,18 @@
   100% {
     transform: translateY(0);
   }
+}
+/* Hide scrollbars for all browsers */
+.wheel-picker-container {
+  overflow: hidden; /* Hides scrollbars */
+}
+
+/* Optional: For WebKit browsers (Chrome, Safari) */
+.wheel-picker-container::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+
+/* Optional: For Firefox */
+.wheel-picker-container {
+  scrollbar-width: none; /* Hides scrollbar for Firefox */
 }

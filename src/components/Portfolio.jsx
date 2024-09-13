@@ -3,46 +3,54 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import soapclub from "../assets/images/soapclub.png";
 import strikefirst from "../assets/images/strikefirst.png";
 import nemen from "../assets/images/nemen.png";
+
 function Portfolio() {
   const cardItems = [
     {
       id: 1,
-      image: soapclub, // Replace with your image URL
+      image: soapclub,
       title: "Soap Club",
-      description: "This is a brief description of the project.",
-      githubLink: "#", // Replace with your GitHub link
-      liveLink: "#", // Replace with your live demo link
+      description:
+        "Clean E-Commerce website made with Reactjs and Vanilla CSS.",
+      githubLink: "https://github.com/Olivia1337/soap_club.git",
+      liveLink: "https://soap-club.vercel.app/",
     },
     {
       id: 2,
-      image: nemen, // Replace with your image URL
+      image: nemen,
       title: "Nemen",
-      description: "This is a brief description of the project.",
-      githubLink: "#", // Replace with your GitHub link
-      liveLink: "#", // Replace with your live demo link
+      description:
+        "A video production company portfolio - made with Reactjs and Tailwind.",
+      githubLink: "https://github.com/Olivia1337/nemen.git",
+      liveLink: "https://nemen.vercel.app/",
     },
     {
       id: 3,
-      image: strikefirst, // Replace with your image URL
+      image: strikefirst,
       title: "Strike First",
-      description: "This is a brief description of the project.",
-      githubLink: "#", // Replace with your GitHub link
-      liveLink: "#", // Replace with your live demo link
+      description:
+        "Website for a muay thai gym - made with Reactjs and Tailwind.",
+      githubLink: "https://github.com/Olivia1337/strike_first.git",
+      liveLink: "https://strike-first.vercel.app/",
     },
   ];
 
   return (
-    <section className="w-[50%]  h-screen flex flex-col justify-center items-center">
-      <h1 className="absolute rotate-90 right-[10%] font-header text-header text-red-900 mix-blend-difference">
+    <section className="w-[50%] h-screen flex flex-col justify-center items-center">
+      <h1 className="absolute rotate-90 right-[10%] font-header text-header text-stone-900 mix-blend-difference">
         PORTFOLIO
       </h1>
       <div className="grid gap-8 lg:grid-cols-2">
         {cardItems.map((item) => (
           <div
             key={item.id}
-            className="bg-stone-100 rounded-lg shadow-lg w-[100%] "
+            className="bg-stone-100 rounded-lg shadow-lg w-[100%] overflow-hidden"
           >
-            <img src={item.image} alt={item.title} className="object-cover" />
+            <img
+              src={item.image}
+              alt={item.title}
+              className="object-cover transition-transform duration-300 hover:scale-105"
+            />
             <div className="p-4">
               <h2 className="font-bold text-xl mb-2">{item.title}</h2>
               <p className="text-gray-700 mb-4">{item.description}</p>
