@@ -3,6 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import soapclub from "../assets/images/soapclub.png";
 import strikefirst from "../assets/images/strikefirst.png";
 import nemen from "../assets/images/nemen.png";
+import portfolio from "../assets/images/portfolio.png";
 
 function Portfolio() {
   const cardItems = [
@@ -32,6 +33,15 @@ function Portfolio() {
         "Website for a muay thai gym - made with Reactjs and Tailwind.",
       githubLink: "https://github.com/Olivia1337/strike_first.git",
       liveLink: "https://strike-first.vercel.app/",
+    },
+    {
+      id: 4,
+      image: portfolio,
+      title: "Portfolio",
+      description:
+        "The webpage you're currently on - made with Reactjs and Tailwind.",
+      githubLink: "https://github.com/Olivia1337/strike_first.git",
+      liveLink: "https://olivia-eriksson-portfolio.vercel.app//",
     },
   ];
 
