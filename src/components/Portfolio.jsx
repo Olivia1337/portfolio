@@ -21,7 +21,7 @@ function Portfolio() {
       image: nemen,
       title: "Nemen",
       description:
-        "A video production company portfolio - made with Reactjs and Tailwind.",
+        "A video production company site - made with Reactjs and Tailwind.",
       githubLink: "https://github.com/Olivia1337/nemen.git",
       liveLink: "https://nemen.vercel.app/",
     },
@@ -41,35 +41,71 @@ function Portfolio() {
       description:
         "The webpage you're currently on - made with Reactjs and Tailwind.",
       githubLink: "https://github.com/Olivia1337/strike_first.git",
-      liveLink: "https://olivia-eriksson-portfolio.vercel.app//",
+      liveLink: "https://olivia-eriksson-portfolio.vercel.app/",
     },
   ];
 
   return (
-    <section className="w-[50%] h-screen flex flex-col justify-center items-center">
-      <h1 className="absolute rotate-90 right-[10%] font-header text-header text-stone-900 mix-blend-difference">
+    <section className="w-[80%] md:w-[80%] h-screen flex flex-col justify-center items-center">
+      <header className="hidden lg:block absolute lg:rotate-90 right-0 md:right-0 font-header text-[3em] md:text-[5em] lg:text-[8em] text-stone-900 mix-blend-difference">
         PORTFOLIO
-      </h1>
-      <div className="grid gap-8 lg:grid-cols-2">
+      </header>
+      <div className="grid gap-2 md:gap-8 grid-cols-1 lg:grid-cols-2 z-10">
         {cardItems.map((item) => (
-          <div
+          <article
             key={item.id}
-            className="bg-stone-100 rounded-lg shadow-lg w-[100%] overflow-hidden"
+            className="rounded-lg shadow-lg overflow-hidden h-[20vh] lg:h-[35vh] bg-white"
+            aria-labelledby={`card-title-${item.id}`}
+            aria-describedby={`card-description-${item.id}`}
           >
             <img
               src={item.image}
               alt={item.title}
-              className="object-cover transition-transform duration-300 hover:scale-105"
+              className="object-cover w-full h-[60%] transition-transform duration-300 hover:scale-105"
+              aria-hidden="true" // Decorative image, not needed for screen readers
             />
-            <div className="p-4">
-              <h2 className="font-bold text-xl mb-2">{item.title}</h2>
-              <p className="text-gray-700 mb-4">{item.description}</p>
-              <div className="flex space-x-4">
+            <div className="flex flex-col py-2 px-4 lg:mt-[1rem]">
+              <header className="flex justify-between items-center">
+                <h2
+                  id={`card-title-${item.id}`}
+                  className="font-bold text-[1.4em] lg:text-[1.8em] mb-2 font-text"
+                >
+                  {item.title}
+                </h2>
+                <div className="flex space-x-4 lg:hidden">
+                  <a
+                    href={item.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-black"
+                    aria-label={`GitHub repository for ${item.title}`}
+                  >
+                    <FaGithub size={24} />
+                  </a>
+                  <a
+                    href={item.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-black"
+                    aria-label={`Live demo of ${item.title}`}
+                  >
+                    <FaExternalLinkAlt size={24} />
+                  </a>
+                </div>
+              </header>
+              <p
+                id={`card-description-${item.id}`}
+                className="text-gray-700 mb-1 font-text text-[1em] md:text-[1.4em]"
+              >
+                {item.description}
+              </p>
+              <div className="flex space-x-4 hidden lg:flex">
                 <a
                   href={item.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 hover:text-black"
+                  aria-label={`GitHub repository for ${item.title}`}
                 >
                   <FaGithub size={24} />
                 </a>
@@ -78,12 +114,13 @@ function Portfolio() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 hover:text-black"
+                  aria-label={`Live demo of ${item.title}`}
                 >
                   <FaExternalLinkAlt size={24} />
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

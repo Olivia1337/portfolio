@@ -58,13 +58,13 @@
   transition: transform 1s ease, opacity 0.3s ease;
 }
 .scroll-indicator-container {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
+  position: fixed; /* Ensure it stays in view */
+  bottom: 20px; /* Adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  z-index: 1000; /* Make sure it's above other content */
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* Space between indicators */
 }
 
 .scroll-indicator-item {

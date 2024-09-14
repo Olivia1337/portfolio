@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
-
+import React from "react";
 import e3 from "../assets/images/element05.png";
 import { SiTailwindcss, SiAdobe } from "react-icons/si";
 import { FiFigma } from "react-icons/fi";
-
 import {
   FaJs,
   FaCss3Alt,
@@ -17,34 +15,45 @@ function About() {
     <section className="w-full h-screen flex flex-col justify-center items-center text-stone-800 relative">
       <img
         src={e3}
-        className="z-30 absolute w-[50rem] object-contain top-[80%] left-[15%]"
+        alt="Decorative element floating animation"
+        className="z-30 absolute w-[15rem] md:w-[50rem] object-contain top-[90%] md:top-[80%] left-[0%] md:left-[15%]"
         style={{
           animation: "float 3s ease-in-out infinite", // Adjust the duration and easing as needed
         }}
+        aria-hidden="true" // Decorative image, not needed for screen readers
       />
-      <h1 className="font-header text-header">Currently</h1>
-      <p className="font-text text-text w-[40%]">
+      <header>
+        <h1 className="font-header text-[2em] md:text-[5em] lg:text-[8em]">
+          Currently
+        </h1>
+      </header>
+      <p className="font-text text-[1em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[40%]">
         Self-taught frontend developer (almost*) with a passion for UI, UX and
         design. Creating web applications using JavaScript, Reactjs, CSS & HTML.
         I also sometimes build mobile applications using React Native. I love
         and am eager to learn new parts of coding and am currently{" "}
         <strong>looking for a trainee-position.</strong>
       </p>
-      <p className="italic text-end font-text text-text w-[40%] text-rose-400">
+      <p className="italic text-end font-text text-[1.1em] md:text-[1.4em] text-rose-400">
         *With a front-end certificate degree from META.
       </p>
-      <div className="flex flex-row gap-3 mt-10">
-        <FaJs size={50} />
-
-        <FaHtml5 size={50} />
-
-        <FaCss3Alt size={50} />
-        <FaReact size={50} />
-        <SiTailwindcss size={50} />
-        <FaBootstrap size={50} />
+      <div
+        className="flex flex-row gap-3 mt-[0.5rem]"
+        aria-label="Technologies"
+      >
+        <FaJs size={50} aria-label="JavaScript" />
+        <FaHtml5 size={50} aria-label="HTML5" />
+        <FaCss3Alt size={50} aria-label="CSS3" />
+        <FaReact size={50} aria-label="React" />
+        <SiTailwindcss size={50} aria-label="Tailwind CSS" />
+        <FaBootstrap size={50} aria-label="Bootstrap" />
       </div>
-      <h1 className="font-header text-header">Past</h1>
-      <p className="font-text text-text w-[40%]">
+      <header>
+        <h1 className="font-header text-[2em] md:text-[5em] lg:text-[8em]">
+          Past
+        </h1>
+      </header>
+      <p className="font-text text-[1em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[40%]">
         Coming from a long background in film I have experience in creative
         directing, cinematography, post-production and graphic design. I also
         ran a commercial production company for 3 years before deciding to
@@ -52,10 +61,12 @@ function About() {
         programs, grading, VFX and I can tell you fun facts about all industry
         cameras & film until you fall asleep.
       </p>
-      <div className="flex flex-row gap-3 mt-10">
-        <SiAdobe size={50} />
-
-        <FiFigma size={50} />
+      <div
+        className="flex flex-row gap-3 mt-[0.5rem]"
+        aria-label="Design Tools"
+      >
+        <SiAdobe size={50} aria-label="Adobe Suite" />
+        <FiFigma size={50} aria-label="Figma" />
       </div>
     </section>
   );

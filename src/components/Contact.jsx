@@ -4,6 +4,8 @@ import e2 from "../assets/images/element06.png";
 
 function Contact() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const e1Ref = useRef(null);
+  const e2Ref = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -39,40 +41,43 @@ function Contact() {
   };
 
   return (
-    <section className="w-full h-screen flex flex-col justify-center items-center text-stone-800">
+    <section className="w-full h-screen flex flex-col justify-center items-center text-stone-800 relative">
       <div
-        className="absolute right-0 top-[40%] w-[40%] h-[40%] bg-blue-300 -z-10 overflow-hidden"
-        style={{
-          transform: "rotate(100deg)",
-        }}
+        className="absolute left-[20%] md:left-[60%] top-[40%] w-[30rem] md:w-[40rem] h-[15rem] md:h-[25rem] bg-blue-300 -z-10 overflow-hidden"
+        style={{ transform: "rotate(100deg)" }}
       >
         <img
           src={e1}
-          className="absolute object-cover"
+          alt="Decorative element 1"
+          ref={e1Ref}
+          className="absolute object-cover w-[50rem] right-[17rem] md:right-[15rem]"
           style={{
-            right: "15rem",
-            transform: moveEffect(mousePosition.x, mousePosition.y, -0, "e1"),
+            transform: moveEffect(mousePosition.x, mousePosition.y, 0, "e1"),
           }}
         />
         <img
           src={e2}
-          className="absolute object-contain"
+          alt="Decorative element 2"
+          ref={e2Ref}
+          className="absolute object-contain w-[50rem] left-[15rem] top-[5rem]"
           style={{
-            right: "-30rem",
-            top: "-15rem",
             transform: moveEffect(mousePosition.x, mousePosition.y, -80, "e2"),
           }}
         />
       </div>
-      <h1 className="font-header text-header">Contact Me</h1>
-      <p className="font-text text-subheader text-center w-[50%]">
-        <a
-          href="mailto:Oliviaeriksson.dev@gmail.com"
-          className="text-red-800 hover:text-red-700"
-        >
-          Oliviaeriksson.dev@gmail.com
-        </a>
-      </p>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="font-header text-[3em] md:text-[5em] lg:text-[8em]">
+          Contact Me
+        </h1>
+        <p className="font-text text-[1.5em] md:text-[3em] lg:text-[4em]">
+          <a
+            href="mailto:Oliviaeriksson.dev@gmail.com"
+            className="text-red-800 hover:text-red-700"
+          >
+            Oliviaeriksson.dev@gmail.com
+          </a>
+        </p>
+      </div>
     </section>
   );
 }
