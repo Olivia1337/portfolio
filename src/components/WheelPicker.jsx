@@ -61,6 +61,7 @@ function WheelPicker({ items, spacing = 20, colors }) {
   };
 
   const handleScroll = () => {
+    // Update scrollTop state based on container scroll
     const container = containerRef.current;
     if (container) {
       setScrollTop(container.scrollTop);
@@ -75,11 +76,10 @@ function WheelPicker({ items, spacing = 20, colors }) {
     return items.map((ItemComponent, index) => {
       const distance = index - selectedIndex;
       const transform = `translateY(${distance * (100 + spacing)}px)`;
-      const scale = distance === 0 ? 1 : 0.9;
-      const opacity = distance === 0 ? 1 : 0.5;
-
+      const scale = distance === 0 ? 1 : 0.9; // Scale the selected item to full size and others to smaller
+      const opacity = distance === 0 ? 1 : 0.5; // Highlight the selected item
       return (
-        <section
+        <div
           key={index}
           ref={(el) => (itemRefs.current[index] = el)}
           className="wheel-item"
@@ -90,22 +90,18 @@ function WheelPicker({ items, spacing = 20, colors }) {
               distance * (100 + spacing)
             }px) scale(${scale})`,
           }}
-          aria-selected={index === selectedIndex}
         >
           <ItemComponent />
-        </section>
+        </div>
       );
     });
   };
 
   const renderScrollIndicator = () => {
     return (
-      <nav
-        className="scroll-indicator-container"
-        aria-label="Scroll indicators"
-      >
+      <div className="scroll-indicator-container">
         {items.map((_, index) => (
-          <button
+          <div
             key={index}
             className={`scroll-indicator-item ${
               index === selectedIndex ? "active" : ""
@@ -113,12 +109,10 @@ function WheelPicker({ items, spacing = 20, colors }) {
             style={{
               opacity: index === selectedIndex ? 1 : 0.5,
             }}
-            onClick={() => handleDotClick(index)}
-            aria-label={`Select item ${index + 1}`}
-            aria-current={index === selectedIndex ? "true" : "false"}
+            onClick={() => handleDotClick(index)} // Add click handler
           />
         ))}
-      </nav>
+      </div>
     );
   };
 
@@ -129,7 +123,6 @@ function WheelPicker({ items, spacing = 20, colors }) {
         backgroundColor,
         transition: "background-color 0.5s ease",
       }}
-      aria-labelledby="wheel-picker-title"
     >
       <img
         src={e1}
@@ -152,7 +145,6 @@ function WheelPicker({ items, spacing = 20, colors }) {
         onWheel={handleWheel}
         onScroll={handleScroll}
         className="wheel-picker-container"
-        aria-live="polite"
       >
         <div className="wheel-picker-content">{renderItems()}</div>
       </div>

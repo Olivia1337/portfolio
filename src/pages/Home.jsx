@@ -10,7 +10,7 @@ function Home() {
   const colors = ["#c7d2fe", "#fecdd3", "#6b7280", "#c7d2fe"];
 
   return (
-    <main role="main" className="h-screen w-screen bg-stone-300">
+    <main className="h-screen w-screen bg-stone-300">
       <WheelPicker items={items} colors={colors} />
     </main>
   );
