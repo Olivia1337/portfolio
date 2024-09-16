@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import soapclub from "../assets/images/soapclub.png";
 import strikefirst from "../assets/images/strikefirst.png";
 import nemen from "../assets/images/nemen.png";
 import portfolio from "../assets/images/portfolio.png";
-
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 function Portfolio() {
   const cardItems = [
     {
@@ -44,13 +46,30 @@ function Portfolio() {
       liveLink: "https://olivia-eriksson-portfolio.vercel.app/",
     },
   ];
+  const headlineRef = useRef();
+
+  useEffect(() => {
+    gsap.fromTo(
+      headlineRef.current,
+      { autoAlpha: 0, y: -20 },
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 1,
+        scrollTrigger: {
+          scroller: ".contain",
+          trigger: headlineRef.current,
+          start: "top 60%",
+          end: "bottom 0%",
+          toggleActions: "play none restart reverse",
+        },
+      }
+    );
+  }, []);
 
   return (
-    <section className="h-screen flex flex-col justify-center items-center">
-      <header className="hidden lg:block absolute lg:rotate-90 right-0 lg:right-0 font-header text-[3em] lg:text-[5em] lg:text-[8em] text-stone-900 mix-blend-difference">
-        PORTFOLIO
-      </header>
-      <header className="lg:hidden  font-header text-[2em] text-stone-900 mt-10">
+    <section className="section">
+      <header className=" font-header text-[2em] text-stone-900 ">
         PORTFOLIO
       </header>
       <div className="grid grid-cols-2 gap-4 p-4 w-full max-w-6xl">

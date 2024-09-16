@@ -41,7 +41,7 @@ function Contact() {
   };
 
   return (
-    <section className="w-full h-screen flex flex-col justify-center items-center text-stone-800 relative">
+    <section className="section">
       <div
         className="absolute left-[20%] md:left-[60%] top-[40%] w-[30rem] md:w-[40rem] h-[15rem] md:h-[25rem] bg-blue-300 -z-10 overflow-hidden"
         style={{ transform: "rotate(100deg)" }}
@@ -66,10 +66,10 @@ function Contact() {
         />
       </div>
       <div className="flex flex-col justify-center items-center">
-        <h1 className="font-header text-[3em] md:text-[5em] lg:text-[8em]">
+        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[5em]">
           Contact Me
         </h1>
-        <p className="font-text text-[1.5em] md:text-[3em] lg:text-[4em]">
+        <p className="font-text text-[1.5em] md:text-[2em] lg:text-[3em]">
           <a
             href="mailto:Oliviaeriksson.dev@gmail.com"
             className="text-red-800 hover:text-red-700"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import e3 from "../assets/images/element05.png";
 import { SiTailwindcss, SiAdobe } from "react-icons/si";
 import { FiFigma } from "react-icons/fi";
@@ -9,10 +9,12 @@ import {
   FaReact,
   FaBootstrap,
 } from "react-icons/fa6";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-function About() {
+function About({ scrollTo, goToSectionRef }) {
   return (
-    <section className="w-full h-screen flex flex-col justify-center items-center text-stone-800 relative">
+    <section className="section">
       <img
         src={e3}
         alt="Decorative element floating animation"
@@ -20,10 +22,9 @@ function About() {
         style={{
           animation: "float 3s ease-in-out infinite", // Adjust the duration and easing as needed
         }}
-        aria-hidden="true" // Decorative image, not needed for screen readers
       />
       <header>
-        <h1 className="font-header text-[2em] md:text-[5em] lg:text-[8em]">
+        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[5em]">
           Currently
         </h1>
       </header>
@@ -49,7 +50,7 @@ function About() {
         <FaBootstrap size={50} aria-label="Bootstrap" />
       </div>
       <header>
-        <h1 className="font-header text-[2em] md:text-[5em] lg:text-[8em]">
+        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[5em]">
           Past
         </h1>
       </header>
