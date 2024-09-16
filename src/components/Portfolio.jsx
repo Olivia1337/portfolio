@@ -30,7 +30,7 @@ function Portfolio() {
       image: strikefirst,
       title: "Strike First",
       description:
-        "Website for a muay thai gym - made with Reactjs and Tailwind.",
+        "Content rich website for a muay thai gym - made with Reactjs and Tailwind.",
       githubLink: "https://github.com/Olivia1337/strike_first.git",
       liveLink: "https://strike-first.vercel.app/",
     },
@@ -46,39 +46,37 @@ function Portfolio() {
   ];
 
   return (
-    <section className="w-[80%] md:w-[80%] h-screen flex flex-col justify-center items-center">
-      <header className="hidden lg:block absolute lg:rotate-90 right-0 md:right-0 font-header text-[3em] md:text-[5em] lg:text-[8em] text-stone-900 mix-blend-difference">
+    <section className="h-screen flex flex-col justify-center items-center">
+      <header className="hidden lg:block absolute lg:rotate-90 right-0 lg:right-0 font-header text-[3em] lg:text-[5em] lg:text-[8em] text-stone-900 mix-blend-difference">
         PORTFOLIO
       </header>
-      <div className="grid gap-2 md:gap-8 grid-cols-1 lg:grid-cols-2 z-10">
+      <header className="lg:hidden  font-header text-[2em] text-stone-900 mt-10">
+        PORTFOLIO
+      </header>
+      <div className="grid grid-cols-2 gap-4 p-4 w-full max-w-6xl">
         {cardItems.map((item) => (
-          <article
-            key={item.id}
-            className="rounded-lg shadow-lg overflow-hidden h-[20vh] lg:h-[35vh] bg-white"
-            aria-labelledby={`card-title-${item.id}`}
-            aria-describedby={`card-description-${item.id}`}
-          >
+          <article key={item.id} className="shadow-lg flex flex-col ">
             <img
               src={item.image}
               alt={item.title}
-              className="object-cover w-full h-[60%] transition-transform duration-300 hover:scale-105"
-              aria-hidden="true" // Decorative image, not needed for screen readers
+              className="object-cover w-full  rounded-t-lg transition-opacity duration-300 hover:opacity-70"
+              aria-hidden="true"
             />
-            <div className="flex flex-col py-2 px-4 lg:mt-[1rem]">
-              <header className="flex justify-between items-center">
+            <div className="bg-stone-200 rounded-b-lg px-2 py-4">
+              <div className="flex justify-between items-center">
                 <h2
                   id={`card-title-${item.id}`}
-                  className="font-bold text-[1.4em] lg:text-[1.8em] mb-2 font-text"
+                  className="font-bold text-[1.2em] lg:text-[1.4em] mb-2 font-text"
                 >
                   {item.title}
                 </h2>
-                <div className="flex space-x-4 lg:hidden">
+                <div className="flex gap-4">
                   <a
                     href={item.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-black"
                     aria-label={`GitHub repository for ${item.title}`}
+                    className="text-gray-700 hover:text-black"
                   >
                     <FaGithub size={24} />
                   </a>
@@ -86,39 +84,19 @@ function Portfolio() {
                     href={item.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-black"
                     aria-label={`Live demo of ${item.title}`}
+                    className="text-gray-700 hover:text-black"
                   >
                     <FaExternalLinkAlt size={24} />
                   </a>
                 </div>
-              </header>
+              </div>
               <p
                 id={`card-description-${item.id}`}
-                className="text-gray-700 mb-1 font-text text-[1em] md:text-[1.4em]"
+                className="text-gray-700 mb-1 font-text text-[1em] md:text-[1.1em]"
               >
                 {item.description}
               </p>
-              <div className="flex space-x-4 hidden lg:flex">
-                <a
-                  href={item.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-black"
-                  aria-label={`GitHub repository for ${item.title}`}
-                >
-                  <FaGithub size={24} />
-                </a>
-                <a
-                  href={item.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-black"
-                  aria-label={`Live demo of ${item.title}`}
-                >
-                  <FaExternalLinkAlt size={24} />
-                </a>
-              </div>
             </div>
           </article>
         ))}

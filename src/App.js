@@ -5,16 +5,18 @@ function App() {
   return (
     <section className="wheel-picker-container">
       <Home />
-      <AnimatedCursor
+    </section>
+  );
+}
+
+export default App;
+{
+  /*      <AnimatedCursor
         innerSize={20}
         outerSize={25}
         color="153, 27, 27"
         outerAlpha={0.2}
         innerScale={0.7}
         outerScale={5}
-      />
-    </section>
-  );
+      /> */
 }
-
-export default App;
