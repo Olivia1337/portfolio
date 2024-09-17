@@ -42,11 +42,11 @@ function Contact() {
 
   return (
     <section className="flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[5em]">
+      <div className="flex flex-col justify-center items-center z-10">
+        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[4em]">
           Contact Me
         </h1>
-        <p className="font-text text-[1.5em] md:text-[2em] lg:text-[3em]">
+        <p className="font-text text-[1.5em] md:text-[2em] lg:text-[2em]">
           <a
             href="mailto:Oliviaeriksson.dev@gmail.com"
             className="text-red-800 hover:text-red-700"
@@ -56,14 +56,15 @@ function Contact() {
         </p>
       </div>
       <div
-        className="absolute right-[10rem] w-[30rem] md:w-[40rem] h-[15rem] md:h-[25rem] bg-blue-300 overflow-hidden"
+        className="absolute z-0 left-[0%] md:left-[5%] lg:left-[20%]
+         w-[20rem] md:w-[40rem] h-[13rem] md:h-[25rem] bg-blue-300 overflow-hidden"
         style={{ transform: "rotate(100deg)" }}
       >
         <img
           src={e1}
           alt="Decorative element 1"
           ref={e1Ref}
-          className="absolute object-cover w-[50rem] right-[17rem] md:right-[15rem]"
+          className="absolute object-cover w-[30rem] right-[13rem] md:right-[20rem]"
           style={{
             transform: moveEffect(mousePosition.x, mousePosition.y, 0, "e1"),
           }}
@@ -72,7 +73,7 @@ function Contact() {
           src={e2}
           alt="Decorative element 2"
           ref={e2Ref}
-          className="absolute object-contain w-[50rem] left-[15rem] top-[5rem]"
+          className="absolute object-contain w-[40rem] left-[10rem] md:left-[20rem]"
           style={{
             transform: moveEffect(mousePosition.x, mousePosition.y, -80, "e2"),
           }}

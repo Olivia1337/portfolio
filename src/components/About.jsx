@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import e3 from "../assets/images/element05.png";
 import { SiTailwindcss, SiAdobe } from "react-icons/si";
 import { FiFigma } from "react-icons/fi";
 import {
@@ -9,20 +8,10 @@ import {
   FaReact,
   FaBootstrap,
 } from "react-icons/fa6";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 function About() {
   return (
     <section className="flex flex-col justify-center items-center">
-      <img
-        src={e3}
-        alt="Decorative element floating animation"
-        className="z-30 absolute w-[15rem] md:w-[50rem] object-contain top-[90%] md:top-[80%] left-[0%] md:left-[60%]"
-        style={{
-          animation: "float 3s ease-in-out infinite", // Adjust the duration and easing as needed
-        }}
-      />
       <header>
         <h1 className="font-header text-[2em] md:text-[3em] lg:text-[4em]">
           Currently
