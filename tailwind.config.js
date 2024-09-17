@@ -8,14 +8,6 @@ module.exports = {
         subheader: ["Jedira-Italic"],
         text: ["Quity"],
       },
-      fontSize: {
-        header: ["8em"],
-        subheader: ["4em"],
-        text: ["1.4em"],
-      },
-      screens: {
-        ml: { max: "1500px" },
-      },
     },
   },
   plugins: [],

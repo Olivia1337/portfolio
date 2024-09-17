@@ -12,9 +12,9 @@ import {
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-function About({ scrollTo, goToSectionRef }) {
+function About() {
   return (
-    <section className="section">
+    <section className="flex flex-col justify-center items-center">
       <img
         src={e3}
         alt="Decorative element floating animation"
@@ -24,7 +24,7 @@ function About({ scrollTo, goToSectionRef }) {
         }}
       />
       <header>
-        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[5em]">
+        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[4em]">
           Currently
         </h1>
       </header>
@@ -50,7 +50,7 @@ function About({ scrollTo, goToSectionRef }) {
         <FaBootstrap size={50} aria-label="Bootstrap" />
       </div>
       <header>
-        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[5em]">
+        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[4em]">
           Past
         </h1>
       </header>

@@ -1,39 +1,69 @@
 import React, { useRef } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 function Home() {
-  const section1 = useRef();
-  const section2 = useRef();
-  const section3 = useRef();
-  const section4 = useRef();
-  const backgroundRef = useRef();
+  const container = useRef(null);
 
-  function scrollTo(section) {
-    section.current.scrollIntoView({ behavior: "smooth" });
-  }
+  // Set up scroll tracking
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  // Transform scale for the circle zooming effect
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+
+  // Background color transformation between sections
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.5, 0.75, 1],
+    ["#c7d2fe", "#fecdd3", "#fecdd3", "#6b7280", "#c7d2fe"] // Color stops
+  );
 
   return (
-    <main className="contain" ref={backgroundRef}>
-      <section ref={section1} className="sec">
-        <Hero scrollTo={scrollTo} goToSectionRef={section2} />
-      </section>
-      <section ref={section2} className="sec">
-        <About scrollTo={scrollTo} goToSectionRef={section3} />
-      </section>
-      <section ref={section3} className="sec">
+    <motion.div
+      ref={container}
+      style={{ backgroundColor }}
+      // Apply background color transformation
+    >
+      {/* First Section (Circle Animation) */}
+      <motion.div
+        className="fixed top-0 left-0 w-full h-screen flex justify-center items-center"
+        style={{ scale, opacity }}
+      >
+        <motion.div
+          className="bg-indigo-300"
+          style={{
+            width: 300,
+            height: 500,
+            rotate: "-20deg",
+          }}
+        />
+      </motion.div>
+
+      {/* Main Content */}
+      <div className="h-screen flex justify-center items-center ">
+        <Hero />
+      </div>
+
+      {/* Scrollable Section */}
+      <div className="h-screen flex justify-center items-center ">
+        <About />
+      </div>
+
+      {/* Additional Sections */}
+      <div className="h-screen flex justify-center items-center ">
         <Portfolio />
-      </section>
-      <section ref={section4} className="sec">
+      </div>
+      <div className="h-screen flex justify-center items-center ">
+        {" "}
         <Contact />
-      </section>
-    </main>
+      </div>
+    </motion.div>
   );
 }
 
