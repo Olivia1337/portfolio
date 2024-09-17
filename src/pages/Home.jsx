@@ -20,26 +20,27 @@ function Home() {
   // Background color transformation between sections
   const backgroundColor = useTransform(
     scrollYProgress,
-    [0, 0.25, 0.5, 0.75, 1],
-    ["#c7d2fe", "#fecdd3", "#fecdd3", "#6b7280", "#c7d2fe"] // Color stops
+    [0, 0.25, 0.75, 1],
+    ["#c7d2fe", "#fecdd3", "#fed7aa", "#c7d2fe"] // Color stops
   );
 
   return (
     <motion.div
       ref={container}
       style={{ backgroundColor }}
+      className="main"
       // Apply background color transformation
     >
       {/* First Section (Circle Animation) */}
       <motion.div
-        className="fixed top-0 left-0 w-full h-screen flex justify-center items-center"
+        className="fixed top-0 left-0 w-full h-screen flex justify-center items-center "
         style={{ scale, opacity }}
       >
         <motion.div
-          className="bg-indigo-300"
+          className="bg-indigo-300 "
           style={{
-            width: 300,
-            height: 500,
+            width: "20rem",
+            height: "30rem",
             rotate: "-20deg",
           }}
         />
@@ -60,7 +61,6 @@ function Home() {
         <Portfolio />
       </div>
       <div className="h-screen flex justify-center items-center ">
-        {" "}
         <Contact />
       </div>
     </motion.div>

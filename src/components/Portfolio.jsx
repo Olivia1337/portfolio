@@ -46,13 +46,13 @@ function Portfolio() {
   ];
 
   return (
-    <section className="section">
+    <section className="flex flex-col justify-center items-center">
       <header className=" font-header text-[2em] text-stone-900 ">
         PORTFOLIO
       </header>
-      <div className="grid grid-cols-2 gap-4 p-4 w-full max-w-6xl">
+      <div className="grid grid-cols-1  md:grid-cols-2 gap-4 p-4 w-full max-w-6xl">
         {cardItems.map((item) => (
-          <article key={item.id} className="shadow-lg flex flex-col ">
+          <article key={item.id} className="flex flex-col ">
             <img
               src={item.image}
               alt={item.title}

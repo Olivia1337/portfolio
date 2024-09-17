@@ -14,11 +14,7 @@ function App() {
     requestAnimationFrame(raf);
   }, []);
 
-  return (
-    <div className="main">
-      <Home />;
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;

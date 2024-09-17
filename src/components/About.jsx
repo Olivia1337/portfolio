@@ -18,7 +18,7 @@ function About() {
       <img
         src={e3}
         alt="Decorative element floating animation"
-        className="z-30 absolute w-[15rem] md:w-[50rem] object-contain top-[90%] md:top-[80%] left-[0%] md:left-[15%]"
+        className="z-30 absolute w-[15rem] md:w-[50rem] object-contain top-[90%] md:top-[80%] left-[0%] md:left-[60%]"
         style={{
           animation: "float 3s ease-in-out infinite", // Adjust the duration and easing as needed
         }}

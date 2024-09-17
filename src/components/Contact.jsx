@@ -41,9 +41,22 @@ function Contact() {
   };
 
   return (
-    <section className="section">
+    <section className="flex justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[5em]">
+          Contact Me
+        </h1>
+        <p className="font-text text-[1.5em] md:text-[2em] lg:text-[3em]">
+          <a
+            href="mailto:Oliviaeriksson.dev@gmail.com"
+            className="text-red-800 hover:text-red-700"
+          >
+            Oliviaeriksson.dev@gmail.com
+          </a>
+        </p>
+      </div>
       <div
-        className="absolute left-[20%] md:left-[60%] top-[40%] w-[30rem] md:w-[40rem] h-[15rem] md:h-[25rem] bg-blue-300 -z-10 overflow-hidden"
+        className="absolute right-[10rem] w-[30rem] md:w-[40rem] h-[15rem] md:h-[25rem] bg-blue-300 overflow-hidden"
         style={{ transform: "rotate(100deg)" }}
       >
         <img
@@ -64,19 +77,6 @@ function Contact() {
             transform: moveEffect(mousePosition.x, mousePosition.y, -80, "e2"),
           }}
         />
-      </div>
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="font-header text-[2em] md:text-[3em] lg:text-[5em]">
-          Contact Me
-        </h1>
-        <p className="font-text text-[1.5em] md:text-[2em] lg:text-[3em]">
-          <a
-            href="mailto:Oliviaeriksson.dev@gmail.com"
-            className="text-red-800 hover:text-red-700"
-          >
-            Oliviaeriksson.dev@gmail.com
-          </a>
-        </p>
       </div>
     </section>
   );

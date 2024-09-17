@@ -64,16 +64,16 @@ function Hero() {
           transform: moveEffect(mousePosition.x, mousePosition.y, -20, "e1"),
         }}
       />
-      <h1 className=" text-center font-header text-[2.5em] md:text-[5em] lg:text-[4em] text-red-900 mix-blend-difference ">
+      <h1 className=" text-center font-header text-[2.5em] md:text-[3em] lg:text-[5em] text-red-900 mix-blend-exclusion ">
         OLIVIA ERIKSSON
       </h1>
-      <h1 className="font-subheader text-[1.8em] md:text-[3em] lg:text-[2em] text-stone-800 text-center">
+      <h1 className="font-subheader text-[1.8em] md:text-[2em] lg:text-[3em] text-stone-800 text-center">
         Front end developer*
       </h1>
       <h1 className="font-header text-[1em] text-red-900">
         *With love for UX & UI design
       </h1>
-      <h1 className="animate-bounce absolute bottom-0 font-text text-text text-red-900">
+      <h1 className="animate-bounce absolute bottom-0 font-text text-[2em] text-red-900">
         SCROLL
       </h1>
     </section>
