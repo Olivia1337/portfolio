@@ -22,8 +22,7 @@ function About() {
         design. Creating web applications using JavaScript, Reactjs, CSS & HTML.
         I also sometimes build mobile applications using React Native. I love
         and am eager to learn new parts of coding - as well as contribute with
-        my skills, and am currently{" "}
-        <strong>looking for a trainee-position.</strong>
+        my skills. Currently <strong>looking for a trainee-position.</strong>
       </p>
       <p className="italic text-end font-text text-[1em] md:text-[1.4em] text-rose-500">
         *With a front-end certificate degree from META.
