@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import soapclub from "../assets/images/soapclub.png";
 import strikefirst from "../assets/images/strikefirst.png";
 import nemen from "../assets/images/nemen.png";
 import portfolio from "../assets/images/portfolio.png";
 import e3 from "../assets/images/element05.png";
+
 function Portfolio() {
   const cardItems = [
     {
@@ -46,7 +47,7 @@ function Portfolio() {
   ];
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center z-30">
       <header className=" font-header text-[2em] md:text-[3em] lg:text-[4em] text-stone-900 ">
         PORTFOLIO
       </header>
@@ -59,7 +60,7 @@ function Portfolio() {
               className="object-cover w-full  rounded-t-lg transition-opacity duration-300 hover:opacity-70"
               aria-hidden="true"
             />
-            <div className="bg-stone-200 rounded-b-lg px-2 py-4">
+            <div className="bg-white rounded-b-lg px-2 py-4">
               <div className="flex justify-between items-center">
                 <h2
                   id={`card-title-${item.id}`}
@@ -67,7 +68,7 @@ function Portfolio() {
                 >
                   {item.title}
                 </h2>
-                <div className="flex gap-4">
+                <div className="flex gap-4 mr-5">
                   <a
                     href={item.githubLink}
                     target="_blank"
@@ -100,7 +101,7 @@ function Portfolio() {
         <img
           src={e3}
           alt="Decorative element floating animation "
-          className=" absolute w-[80%] md:w-[50rem] object-contain top-[90%] "
+          className="hidden md:block z-0 absolute w-[30rem] md:w-[40rem] object-contain  left-[40%] top-[90%] "
           style={{
             animation: "float 3s ease-in-out infinite",
           }}

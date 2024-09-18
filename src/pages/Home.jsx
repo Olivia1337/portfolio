@@ -50,7 +50,7 @@ function Home() {
     <motion.div ref={container} style={{ backgroundColor }}>
       {/* First Section (Circle Animation) */}
       <motion.div
-        className="z-10 fixed top-0 left-0 w-full h-screen flex justify-center items-center  "
+        className=" fixed top-0 left-0 w-full h-screen flex justify-center items-center  "
         style={{ scale, opacity }}
       >
         <motion.div
