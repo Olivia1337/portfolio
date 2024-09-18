@@ -7,6 +7,7 @@ module.exports = {
         header: ["Jedira-Regular"],
         subheader: ["Jedira-Italic"],
         text: ["Quity"],
+        textlong: ["JUST-Sans-Regular"],
       },
     },
   },

@@ -109,7 +109,7 @@ function Portfolio() {
         <img
           src={e3}
           alt="Decorative element floating animation"
-          className="hidden md:block z-0 absolute w-[30rem] md:w-[40rem] object-contain left-[40%] md:left-[30%] top-[90%]"
+          className="hidden lg:block z-0 absolute w-[30rem] md:w-[40rem] object-contain left-[40%] md:left-[30%] top-[95%]"
           style={{
             animation: "float 3s ease-in-out infinite",
           }}
