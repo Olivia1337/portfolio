@@ -68,7 +68,7 @@ function Portfolio() {
                 >
                   {item.title}
                 </h2>
-                <div className="flex gap-4 mr-5">
+                <div className="flex gap-4 ">
                   <a
                     href={item.githubLink}
                     target="_blank"
