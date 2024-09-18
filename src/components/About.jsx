@@ -17,7 +17,7 @@ function About() {
           Currently
         </h1>
       </header>
-      <p className="font-text text-[1.2em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[40%]">
+      <p className="font-textlong text-[1em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[35%] text-center">
         Self-taught frontend developer (almost*) with a passion for UI, UX and
         design. Creating web applications using JavaScript, Reactjs, CSS & HTML.
         I also sometimes build mobile applications using React Native. I love
@@ -25,7 +25,7 @@ function About() {
         my skills, and am currently{" "}
         <strong>looking for a trainee-position.</strong>
       </p>
-      <p className="italic text-end font-text text-[1.1em] md:text-[1.4em] text-rose-500">
+      <p className="italic text-end font-text text-[1em] md:text-[1.4em] text-rose-500">
         *With a front-end certificate degree from META.
       </p>
       <div
@@ -43,7 +43,7 @@ function About() {
           Past
         </h1>
       </header>
-      <p className="font-text text-[1.2em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[40%]">
+      <p className="font-textlong text-[1em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[35%] text-center">
         Coming from a long background in film I have experience in creative
         directing, cinematography, post-production and graphic design. I also
         ran a commercial production company for 3 years before deciding to
