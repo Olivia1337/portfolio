@@ -4,7 +4,7 @@ import soapclub from "../assets/images/soapclub.png";
 import strikefirst from "../assets/images/strikefirst.png";
 import nemen from "../assets/images/nemen.png";
 import portfolio from "../assets/images/portfolio.png";
-
+import e3 from "../assets/images/element05.png";
 function Portfolio() {
   const cardItems = [
     {
@@ -96,7 +96,15 @@ function Portfolio() {
               </p>
             </div>
           </article>
-        ))}
+        ))}{" "}
+        <img
+          src={e3}
+          alt="Decorative element floating animation "
+          className=" absolute w-[80%] md:w-[50rem] object-contain top-[90%] "
+          style={{
+            animation: "float 3s ease-in-out infinite",
+          }}
+        />
       </div>
     </section>
   );

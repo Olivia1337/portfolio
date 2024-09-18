@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import e1 from "../assets/images/element01.png";
-import e2 from "../assets/images/element03.png";
+
 import e3 from "../assets/images/element04.png";
 import e4 from "../assets/images/element02.png";
 

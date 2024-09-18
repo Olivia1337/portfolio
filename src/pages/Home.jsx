@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
-import e3 from "../assets/images/element05.png";
+
 import e2 from "../assets/images/element08.png";
 
 function Home() {
@@ -61,14 +61,6 @@ function Home() {
       {/* Main Content */}
       <motion.div className="h-screen flex justify-center items-center">
         <Hero />{" "}
-        <img
-          src={e3}
-          alt="Decorative element floating animation "
-          className="hidden md:block z-0 absolute w-[30rem] md:w-[40rem] object-contain  top-[50%] "
-          style={{
-            animation: "float 3s ease-in-out infinite",
-          }}
-        />
       </motion.div>
       <motion.div
         className="h-screen flex justify-center items-center"
