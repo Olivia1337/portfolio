@@ -17,7 +17,7 @@ function About() {
           Currently
         </h1>
       </header>
-      <p className="font-textlong text-[1.2em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[40%]">
+      <p className="font-text text-[1.2em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[40%]">
         Self-taught frontend developer (almost*) with a passion for UI, UX and
         design. Creating web applications using JavaScript, Reactjs, CSS & HTML.
         I also sometimes build mobile applications using React Native. I love
@@ -43,7 +43,7 @@ function About() {
           Past
         </h1>
       </header>
-      <p className="font-textlong text-[1.2em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[40%]">
+      <p className="font-text text-[1.2em] md:text-[1.4em] w-[90%] md:w-[60%] lg:w-[40%]">
         Coming from a long background in film I have experience in creative
         directing, cinematography, post-production and graphic design. I also
         ran a commercial production company for 3 years before deciding to
