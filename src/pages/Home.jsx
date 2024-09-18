@@ -64,7 +64,7 @@ function Home() {
         <img
           src={e3}
           alt="Decorative element floating animation "
-          className=" z-0 absolute w-[50rem] object-contain  top-[15%]  "
+          className="hidden md:block z-0 absolute w-[30rem] md:w-[40rem] object-contain  top-[50%] "
           style={{
             animation: "float 3s ease-in-out infinite",
           }}
@@ -77,7 +77,7 @@ function Home() {
         <About />
         <img
           src={e2}
-          alt="Decorative element floating animation"
+          alt="Decorative element floating animation "
           className="hidden md:block z-0 absolute w-[10rem] md:w-[20rem] object-contain md:top-[70%] right-[0%] md:right-[80%]"
           style={{
             animation: "float 3s ease-in-out infinite",

@@ -51,7 +51,7 @@ function Hero() {
       <img
         src={e3}
         alt="Decorative element 3"
-        className="z-10  absolute w-[10rem] md:w-[15rem] lg:w-[20rem] object-contain top-[0%] md:top-[10%] left-[60%] md:left-[60%] "
+        className="hidden md:block z-10  absolute w-[10rem] md:w-[15rem] lg:w-[20rem] object-contain top-[0%] md:top-[10%] left-[60%] md:left-[60%] "
         style={{
           transform: moveEffect(mousePosition.x, mousePosition.y, -20, "e1"),
         }}
@@ -72,7 +72,7 @@ function Hero() {
         Front end developer*
       </h1>
       <h1 className="z-10 font-header text-[1em] text-red-900 ">
-        *With love for UX & UI design
+        *With passion for UX & UI design
       </h1>
       <h1 className="animate-bounce absolute bottom-0 font-text text-[2em] text-red-900">
         SCROLL
