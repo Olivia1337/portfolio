@@ -22,7 +22,7 @@ function Portfolio() {
       title: "Nemen",
       description:
         "A video production company site - made with Reactjs and Tailwind.",
-      githubLink: "https://github.com/Olivia1337/nemen.git",
+      githubLink: "https://github.com/Olivia1337/nemensthlm.git",
       liveLink: "https://nemen.vercel.app/",
     },
     {
@@ -40,7 +40,7 @@ function Portfolio() {
       title: "Portfolio",
       description:
         "The webpage you're currently on - made with Reactjs and Tailwind.",
-      githubLink: "https://github.com/Olivia1337/strike_first.git",
+      githubLink: "https://github.com/Olivia1337/portfolio.git",
       liveLink: "https://olivia-eriksson-portfolio.vercel.app/",
     },
   ];

@@ -1,3 +1,5 @@
+/* App.css */
+
 @font-face {
   font-family: "Quity";
   src: url("../src/assets/fonts/Quity.ttf");
@@ -17,26 +19,27 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Adjust the distance of the float */
+    transform: translateY(-10px);
   }
   100% {
     transform: translateY(0);
   }
 }
 
-.main {
-  /* Hide scrollbars */
-  overflow: hidden;
-
-  /* Optional: To allow content to overflow without showing scrollbars */
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  /* For Webkit-based browsers (Chrome, Safari) */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-.main::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+::-webkit-scrollbar-track {
+  background: #e7e5e4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #991b1b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7f1d1d;
 }

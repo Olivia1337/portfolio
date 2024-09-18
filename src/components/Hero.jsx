@@ -47,11 +47,11 @@ function Hero() {
   };
 
   return (
-    <section className="z-30 flex flex-col justify-center items-center">
+    <section className=" flex flex-col justify-center items-center ">
       <img
         src={e3}
         alt="Decorative element 3"
-        className="z-30 absolute w-[10rem] md:w-[15rem] lg:w-[20rem] object-contain top-[0%] md:top-[17%] right-[0%] md:right-[24%]"
+        className="z-10  absolute w-[10rem] md:w-[15rem] lg:w-[20rem] object-contain top-[0%] md:top-[10%] left-[60%] md:left-[60%] "
         style={{
           transform: moveEffect(mousePosition.x, mousePosition.y, -20, "e1"),
         }}
@@ -59,18 +59,19 @@ function Hero() {
       <img
         src={e4}
         alt="Decorative element 4"
-        className="absolute w-[10rem] md:w-[15rem] lg:w-[20rem] object-contain top-[80%] left-[20%]"
+        className="absolute  w-[10rem] md:w-[15rem] lg:w-[20rem] object-contain top-[80%] left-[20%]"
         style={{
           transform: moveEffect(mousePosition.x, mousePosition.y, -20, "e1"),
         }}
       />
-      <h1 className=" text-center font-header text-[2.5em] md:text-[3em] lg:text-[5em] text-red-900 mix-blend-exclusion ">
+
+      <h1 className=" z-10 text-center font-header text-[2.5em] md:text-[3em] lg:text-[5em] text-red-900  ">
         OLIVIA ERIKSSON
       </h1>
-      <h1 className="font-subheader text-[1.8em] md:text-[2em] lg:text-[3em] text-stone-800 text-center">
+      <h1 className="z-10 font-subheader text-[1.8em] md:text-[2em] lg:text-[3em] text-stone-800 text-center">
         Front end developer*
       </h1>
-      <h1 className="font-header text-[1em] text-red-900">
+      <h1 className="z-10 font-header text-[1em] text-red-900 ">
         *With love for UX & UI design
       </h1>
       <h1 className="animate-bounce absolute bottom-0 font-text text-[2em] text-red-900">

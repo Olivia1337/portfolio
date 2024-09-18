@@ -6,7 +6,6 @@ import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
 import e3 from "../assets/images/element05.png";
 import e2 from "../assets/images/element08.png";
-import e1 from "../assets/images/element03.png";
 
 function Home() {
   const container = useRef(null);
@@ -48,49 +47,43 @@ function Home() {
   const contactOpacity = useTransform(scrollYProgress, [0.85, 1], [0.5, 1]); // Opacity animation
 
   return (
-    <motion.div ref={container} style={{ backgroundColor }} className="main">
-      {/* First Section (Circle Animation) */}{" "}
+    <motion.div ref={container} style={{ backgroundColor }}>
+      {/* First Section (Circle Animation) */}
       <motion.div
-        className="fixed top-0 left-0 w-full h-screen flex justify-center items-center"
+        className="z-10 fixed top-0 left-0 w-full h-screen flex justify-center items-center  "
         style={{ scale, opacity }}
       >
         <motion.div
-          className="bg-indigo-300"
-          style={{
-            width: "20rem",
-            height: "30rem",
-            rotate: "-20deg",
-          }}
+          className="bg-indigo-300 w-[10rem] md:w-[20rem] h-[15rem] md:h-[30rem]"
+          style={{ rotate: "-20deg" }}
         />
       </motion.div>
-      {/* Main Content */}{" "}
+      {/* Main Content */}
       <motion.div className="h-screen flex justify-center items-center">
         <Hero />{" "}
         <img
           src={e3}
-          alt="Decorative element floating animation"
-          className="z-0 absolute w-[15rem] md:w-[50rem] object-contain top-[20%] md:top-[80%] left-[0%] md:left-[60%]"
+          alt="Decorative element floating animation "
+          className=" z-0 absolute w-[50rem] object-contain  top-[15%]  "
           style={{
-            animation: "float 3s ease-in-out infinite", // Adjust the duration and easing as needed
+            animation: "float 3s ease-in-out infinite",
           }}
         />
       </motion.div>
-      {/* Scrollable Section with scaling effect */}
       <motion.div
         className="h-screen flex justify-center items-center"
         style={{ scale: aboutScale }}
       >
-        <About />{" "}
+        <About />
         <img
           src={e2}
           alt="Decorative element floating animation"
-          className="z-0 absolute w-[10rem] md:w-[20rem] object-contain top-[20%] md:top-[80%] right-[0%] md:right-[80%]"
+          className="hidden md:block z-0 absolute w-[10rem] md:w-[20rem] object-contain md:top-[70%] right-[0%] md:right-[80%]"
           style={{
-            animation: "float 3s ease-in-out infinite", // Adjust the duration and easing as needed
+            animation: "float 3s ease-in-out infinite",
           }}
         />
       </motion.div>
-      {/* Additional Sections with scaling effect */}
       <motion.div
         className="h-screen flex justify-center items-center"
         style={{ scale: portfolioScale }}
@@ -106,7 +99,7 @@ function Home() {
           opacity: contactOpacity,
         }}
       >
-        <Contact />{" "}
+        <Contact />
       </motion.div>
     </motion.div>
   );
