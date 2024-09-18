@@ -48,18 +48,26 @@ function Portfolio() {
 
   return (
     <section className="flex flex-col justify-center items-center z-30">
-      <header className=" font-header text-[2em] md:text-[3em] lg:text-[4em] text-stone-900 ">
+      <header className="font-header text-[2em] md:text-[3em] lg:text-[4em] text-stone-900">
         PORTFOLIO
       </header>
       <div className="grid grid-cols-2 gap-4 p-4 w-full max-w-6xl">
         {cardItems.map((item) => (
-          <article key={item.id} className="flex flex-col ">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="object-cover w-full  rounded-t-lg transition-opacity duration-300 hover:opacity-70"
-              aria-hidden="true"
-            />
+          <article key={item.id} className="flex flex-col relative">
+            <a
+              href={item.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Live demo of ${item.title}`}
+              className="block"
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                className="object-cover w-full rounded-t-lg transition-opacity duration-300 hover:opacity-70"
+                aria-hidden="true"
+              />
+            </a>
             <div className="bg-white rounded-b-lg px-2 py-4">
               <div className="flex justify-between items-center">
                 <h2
@@ -68,7 +76,7 @@ function Portfolio() {
                 >
                   {item.title}
                 </h2>
-                <div className="flex gap-4 ">
+                <div className="flex gap-4">
                   <a
                     href={item.githubLink}
                     target="_blank"
@@ -97,11 +105,11 @@ function Portfolio() {
               </p>
             </div>
           </article>
-        ))}{" "}
+        ))}
         <img
           src={e3}
-          alt="Decorative element floating animation "
-          className="hidden md:block z-0 absolute w-[30rem] md:w-[40rem] object-contain  left-[40%] md:left-[30%]  top-[90%] "
+          alt="Decorative element floating animation"
+          className="hidden md:block z-0 absolute w-[30rem] md:w-[40rem] object-contain left-[40%] md:left-[30%] top-[90%]"
           style={{
             animation: "float 3s ease-in-out infinite",
           }}
